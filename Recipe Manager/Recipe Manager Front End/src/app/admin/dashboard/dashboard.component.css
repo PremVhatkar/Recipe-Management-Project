@@ -1,0 +1,9 @@
+.card:hover{
+    transform:scale(1.05);
+    transition:transform 0.3s ease;
+}
+.col-lg-3:hover{
+    transform:scale(1.05);
+    transition:transform 0.3s ease;
+    background-color: lightgray;
+}

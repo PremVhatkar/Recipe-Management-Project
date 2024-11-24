@@ -1,0 +1,96 @@
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <div class="main-panel" style="width: 100%;">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-12 grid-margin">
+                        <div class="row">
+                            <div class="col-12 ">
+                                <h3 class="font-weight-bold" *ngIf="recipe"><b>Recipe Ingredients for {{recipe.name}} ({{recipe.noOfPerson}} Persons)</b></h3>
+                                <form [formGroup]="formdata" (ngSubmit)="submit(formdata.value)">
+                                    <div class="row">
+                                        <div class="card border solid border-3">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-5">
+                                                        <span><b>Ingredient *</b></span>
+                                                        <select class="form-control" style="height: 55px;"
+                                                            formControlName="ingredientId" (change)="ingredientChanged($event)">
+                                                            <option value="0">-- Select --</option>
+                                                            <option *ngFor="let ingredient of ingredients;"
+                                                                value="{{ingredient.id}}">{{ ingredient
+                                                                .name }}</option>
+                                                        </select>
+                                                        <!-- <span style="color: red;"
+                                                            *ngIf="formdata.controls.unitId.touched && formdata.controls.unitId.invalid">Please
+                                                            Enter Unit
+                                                        </span> -->
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <span><b>Quantity *</b></span>
+
+                                                        <input type="number" placeholder="Quantity"
+                                                            formControlName="quantity" class="form-control">
+                                                    </div>
+
+                                                    <div class="col-lg-2">
+                                                        <span><b>Unit</b></span>
+                                                        <span class="form-control">{{ unit }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="pt-3">
+                                                    <button type="submit" class="btn btn-success text-white me-2"
+                                                        [disabled]="!formdata.valid"><b>Submit</b></button>
+                                                    <button class="btn btn-danger text-white"
+                                                        (click)="cancel()"><b>Cancel</b></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+
+                                <div class="row pt-3">
+                                    <div class="card border solid border-3">
+                                        <div class="card-body">
+                                            <table class="table table-striped table-hover text-center">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Id</th>
+                                                        <th scope="col">Ingredient</th>
+                                                        <th scope="col">Quantity</th>
+                                                        <th scope="col">Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let listingredient of listingredients; let i = index;">
+                                                        <th>{{i + 1}}</th>
+                                                        <td>{{listingredient.ingredientName}}</td>
+                                                        <td>{{listingredient.quantity + " " + listingredient.unitName}}</td>
+                                                        <td>
+                                                            <!-- <button class="btn btn-sm btn-primary me-2"><i
+                                                                    class="fa-solid fa-pen-to-square" (click)="edit(listingredient)"></i></button> -->
+                                                            <button class="btn btn-sm btn-danger text-white"><i
+                                                                    class="fa-solid fa-trash" (click)="deletedata(listingredient.id)"></i></button>
+                                                        </td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

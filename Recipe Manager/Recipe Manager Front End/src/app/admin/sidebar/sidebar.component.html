@@ -1,0 +1,69 @@
+<nav class="sidebar sidebar-offcanvas fixed-top pt-5 bg-dark" id="sidebar" style="height: 1000px;">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/admin/dashboard">
+
+        <span class="menu-title"><b><i class="icon-grid menu-icon"></i>Dashboard</b></span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <i class="icon-layout menu-icon"></i>
+        <span class="menu-title"><b>Masters</b></span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-basic">
+        <ul class="nav flex-coumn bg-gradient-light">
+          <li class="nav-item"> <a class="nav-link" routerLink="/master/units"><i
+                class="fa-solid fa-scale-balanced"></i><b>&nbsp;&nbsp;&nbsp;Units</b></a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/master/categories"><i
+                class="fa-solid fa-tags"></i><b>&nbsp;&nbsp;&nbsp;Categories</b></a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/master/ingredients"><i
+                class="fa-solid fa-carrot"></i><b>&nbsp;&nbsp;&nbsp;Ingredients</b></a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/master/recipes"><i
+                class="fa-solid fa-utensils"></i><b>&nbsp;&nbsp;&nbsp;Recipes</b></a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" routerLink="/admin/users" aria-expanded="false"
+        aria-controls="form-elements">
+
+        <span class="menu-title"><b><i class="icon-columns menu-icon"></i>Users</b></span>
+        <!-- <i class="menu-arrow"></i> -->
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" routerLink="/admin/orders" aria-expanded="false"
+        aria-controls="charts">
+        <i class="icon-bar-graph menu-icon"></i>
+        <span class="menu-title"><b>Orders</b></span>
+        <!-- <i class="menu-arrow"></i> -->
+      </a>
+
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" routerLink="/admin/reports" aria-expanded="false"
+        aria-controls="tables">
+        <span class="menu-title"><b><i class="icon-grid-2 menu-icon"></i>Reports</b></span>
+        <!-- <i class="menu-arrow"></i> -->
+      </a>
+
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" style="cursor: pointer;" data-bs-toggle="collapse" (click)="logout()" aria-expanded="false"
+        aria-controls="tables">
+        <i class="fa-solid fa-power-off"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="menu-title"><b>Logout</b></span>
+      </a>
+
+    </li>
+
+    <!-- <li class="nav-item">
+      <a class="nav-link" style="cursor: pointer;" (click)="logout()">
+        Logout
+      </a>
+    </li> -->
+  </ul>
+</nav>

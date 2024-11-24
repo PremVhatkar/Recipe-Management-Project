@@ -1,0 +1,49 @@
+<div class="row d-flex justify-content-center align-items-center h-100">
+  <div class="col col-xl-10">
+    <div class="card" style="border-radius: 1rem;">
+      <div class="row g-0">
+        <div class="col-md-6 col-lg-5 d-none d-md-block">
+          <img src="../../assets/images/KICTCHEN MASTER.png" alt="login form" class="img-fluid mt-5"
+            style="border-radius: 1rem 0 0 1rem;" />
+        </div>
+        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+          <div class="card-body p-4 p-lg-5 text-black">
+
+            <form [formGroup]="logindata" (ngSubmit)="login(logindata.value)">
+
+              <div class="d-flex align-items-center mb-3 pb-1">
+                <img src="../../assets/images/Smiling-chef-cartoon-character-on-transparent-background-PNG-1.png" style="width: 200px;" class="rounded rounded-4"
+                  alt="">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <h2 class="fw-bold mb-0">Login Form</h2>
+              </div>
+
+              <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+              <div class="form-floating form-outline mb-3">
+                <input type="email" formControlName="email" class="form-control" />
+                <label>Email address</label>
+              </div>
+
+              <div data-mdb-input-init class="form-floating form-outline mb-4">
+                <input type="password" formControlName="password" class="form-control" />
+                <label class="form-label" for="form2Example27">Password</label>
+              </div>
+
+
+              <div class="mb-4">
+                <input type="submit" class="btn btn-primary btn-lg" value="Login" />
+              </div>
+
+              <p class="small text-muted" routerlink="">Forgot password?</p>
+              <p class="mb-5 pb-lg-2" style="color: 393f81;">Don't have an account? <a routerlink=""
+                  style="color: 393f81;">Register here</a></p>
+              
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
